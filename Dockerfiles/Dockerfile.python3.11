@@ -1,4 +1,4 @@
-FROM alpine:3.17 as builder
+FROM alpine:3.19 as builder
 
 RUN set -eux \
 	&& apk add --no-cache \
@@ -14,21 +14,21 @@ RUN set -eux \
 ARG BANDIT_VERSION
 RUN set -eux \
 	&& if [ "${BANDIT_VERSION}" = "latest" ]; then \
-		pip3 install --no-cache-dir --no-compile bandit; \
+		pip3 install --no-cache-dir --no-compile --break-system-packages bandit; \
 	else \
-		pip3 install --no-cache-dir --no-compile "bandit>=${BANDIT_VERSION},<$(echo "${BANDIT_VERSION}+1" | bc)"; \
+		pip3 install --no-cache-dir --no-compile --break-system-packages "bandit>=${BANDIT_VERSION},<$(echo "${BANDIT_VERSION}+1" | bc)"; \
 	fi \
 	\
 	&& bandit --version | grep -E '^bandit\s[0-9]+' \
 	\
-	&& pip3 install --no-cache-dir \
+	&& pip3 install --no-cache-dir --break-system-packages \
 		lxml \
 	\
 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
 
-FROM alpine:3.17 as production
+FROM alpine:3.19 as production
 ARG BANDIT_VERSION
 # https://github.com/opencontainers/image-spec/blob/master/annotations.md
 #LABEL "org.opencontainers.image.created"=""
@@ -52,7 +52,7 @@ RUN set -eux \
 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
-COPY --from=builder /usr/lib/python3.10/site-packages/ /usr/lib/python3.10/site-packages/
+COPY --from=builder /usr/lib/python3.11/site-packages/ /usr/lib/python3.11/site-packages/
 COPY --from=builder /usr/bin/bandit /usr/bin/bandit
 WORKDIR /data
 ENTRYPOINT ["bandit"]

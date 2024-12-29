@@ -61,19 +61,23 @@ The following Docker image tags are rolling releases and are built and updated e
 [![nightly](https://github.com/cytopia/docker-bandit/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-bandit/actions?query=workflow%3Anightly)
 
 
-| Docker Tag            | Git Ref      | Bandit       | Python      | Available Architectures                      |
-|-----------------------|--------------|--------------|-------------|----------------------------------------------|
-| **`latest`**          | master       | latest       | latest      | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.10`       | master       | latest       | **`3.10`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.9`        | master       | latest       | **`3.9`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.8`        | master       | latest       | **`3.8`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.7`        | master       | latest       | **`3.7`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-|                       |              |              |             |                                              |
-| **`1`**               | master       | **`1.x.x`**  | latest      | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.10`            | master       | **`1.x.x`**  | **`3.10`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.9`             | master       | **`1.x.x`**  | **`3.9`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.8`             | master       | **`1.x.x`**  | **`3.8`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.7`             | master       | **`1.x.x`**  | **`3.7`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| Docker Tag      | Git Ref      | Bandit       | Python     | Available Architectures                      |
+|-----------------|--------------|--------------|------------|----------------------------------------------|
+| **`latest`**    | master       | latest       | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.12` | master       | latest       | **`3.12`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.11` | master       | latest       | **`3.11`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.10` | master       | latest       | **`3.10`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.9`  | master       | latest       | **`3.9`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.8`  | master       | latest       | **`3.8`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.7`  | master       | latest       | **`3.7`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+|                 |              |              |            |                                              |
+| **`1`**         | master       | **`1.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.12`      | master       | **`1.x.x`**  | **`3.12`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.11`      | master       | **`1.x.x`**  | **`3.11`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.10`      | master       | **`1.x.x`**  | **`3.10`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.9`       | master       | **`1.x.x`**  | **`3.9`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.8`       | master       | **`1.x.x`**  | **`3.8`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.7`       | master       | **`1.x.x`**  | **`3.7`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 
 
 #### Point in time releases
@@ -82,19 +86,23 @@ The following Docker image tags are built once and can be used for reproducible 
 
 [![build](https://github.com/cytopia/docker-bandit/workflows/build/badge.svg)](https://github.com/cytopia/docker-bandit/actions?query=workflow%3Abuild)
 
-| Docker Tag            | Git Ref      | Bandit       | Python      | Available Architectures                      |
-|-----------------------|--------------|--------------|-------------|----------------------------------------------|
-| **`latest-<tag>`**    | git: `<tag>` | latest       | latest      | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.10-<tag>` | git: `<tag>` | latest       | **`3.10`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.9-<tag>`  | git: `<tag>` | latest       | **`3.9`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.8-<tag>`  | git: `<tag>` | latest       | **`3.8`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `latest-py3.7-<tag>`  | git: `<tag>` | latest       | **`3.7`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-|                       |              |              |             |                                              |
-| **`1-<tag>`**         | git: `<tag>` | **`1.x.x`**  | latest      | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.10-<tag>`      | git: `<tag>` | **`1.x.x`**  | **`3.10`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.9-<tag>`       | git: `<tag>` | **`1.x.x`**  | **`3.9`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.8-<tag>`       | git: `<tag>` | **`1.x.x`**  | **`3.8`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-| `1-py3.7-<tag>`       | git: `<tag>` | **`1.x.x`**  | **`3.7`**   | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| Docker Tag            | Git Ref      | Bandit       | Python     | Available Architectures                      |
+|-----------------------|--------------|--------------|------------|----------------------------------------------|
+| **`latest-<tag>`**    | git: `<tag>` | latest       | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.12-<tag>` | git: `<tag>` | latest       | **`3.12`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.11-<tag>` | git: `<tag>` | latest       | **`3.11`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.10-<tag>` | git: `<tag>` | latest       | **`3.10`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.9-<tag>`  | git: `<tag>` | latest       | **`3.9`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.8-<tag>`  | git: `<tag>` | latest       | **`3.8`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-py3.7-<tag>`  | git: `<tag>` | latest       | **`3.7`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+|                       |              |              |            |                                              |
+| **`1-<tag>`**         | git: `<tag>` | **`1.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.12-<tag>`      | git: `<tag>` | **`1.x.x`**  | **`3.12`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.11-<tag>`      | git: `<tag>` | **`1.x.x`**  | **`3.11`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.10-<tag>`      | git: `<tag>` | **`1.x.x`**  | **`3.10`** | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.9-<tag>`       | git: `<tag>` | **`1.x.x`**  | **`3.9`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.8-<tag>`       | git: `<tag>` | **`1.x.x`**  | **`3.8`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `1-py3.7-<tag>`       | git: `<tag>` | **`1.x.x`**  | **`3.7`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 
 > Where `<tag>` refers to the chosen git tag from this repository.
 
